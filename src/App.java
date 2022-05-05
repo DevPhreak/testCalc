@@ -22,8 +22,13 @@ public class App {
         if(isValid >= 0)
         {
             String[] splitEquation = equation.split("[*/+-]");
-            double result = calc.calculate(Double.parseDouble(splitEquation[0]),Double.parseDouble(splitEquation[1]), isValid);
-            System.out.println(result);
+            if(splitEquation.length == 2) {
+                double result = calc.calculate(Double.parseDouble(splitEquation[0]), Double.parseDouble(splitEquation[1]), isValid);
+                System.out.println(result);
+            }
+            else {
+                System.out.println("Something went wrong! \nArray size = " + splitEquation.length );
+            }
         }
         else
         {
